@@ -20,8 +20,8 @@ usernamePassword = {
     'vcu': 'rams'
 }
 
-url = 'https://pingpong-holmesjb-cmsc455.herokuapp.com/pong'
-local_url = 'http://127.0.0.1:3000/pong'
+url = 'https://pong-holmesjb-cmsc455.herokuapp.com/pong'
+# local_url = 'http://127.0.0.1:3000/pong'
 
 @auth.get_password
 def get_password(username):
@@ -42,7 +42,7 @@ def ping_service():
 
 
     authpong = HttpAuth('vcu', 'rams')
-    requestpong = requests.get(local_url, auth=requests.auth.HTTPDigestAuth(username, password))
+    requestpong = requests.get(url, auth=requests.auth.HTTPDigestAuth(username, password))
 
     endTime = datetime.datetime.now()
     time_passed = endTime - startTime
